@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>SimpleConfigEditor</title>
+		<script type="text/javascript" src="js/shCore.js"></script>
+		<script type="text/javascript" src="js/shBrushCSharp.js"></script>
+		
+		<link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
+		<link type="text/css" rel="stylesheet" href="css/shCoreRDark.css"/>
+		<style>
+		body { padding: 40px 40px 0 40px; background-color: #1b2436; }
+		h1 { font-family:"Aldrich"; color: #fff; font-size: 36px; }
+		
+		.text { padding: 20px; margin-bottom: 20px; color: #fff; font-family:"Aldrich"; font-size: 14px; }
+		.text a { color: #0088FF; text-decoration: none; }
+		.code { width: 800px; font-size: 13px; margin: auto; }
+		</style>
+		<script type="text/javascript">SyntaxHighlighter.all();</script>
+	</head>
+	<body style=''>
+		<h1>SimpleConfigEditor</h1>
+		<hr/>
+		<div class='text'>
+		To use this Tool in your project <a target='_blank' href='https://github.com/ramajd/SimpleConfigEditor/archive/master.zip'>download latest version</a> and add reference of "SimpleConfigEditor.dll" to your project:
+		</div>
+		<div class='code'>
+			<pre class="brush: csharp;">
+//Create an instance of ConfigEditor Class:
+//Make sure that your Win/Web Application has write and read privilege to selected config path 
+
+//In Web
+SimpleConfigEditor.ConfigEditor cfg = new SimpleConfigEditor.ConfigEditor(Server.MapPath("config.xml"));
+
+//In Win App
+SimpleConfigEditor.ConfigEditor cfg = new SimpleConfigEditor.ConfigEditor("config.xml");
+
+//Set a Value:
+cfg.Set("KEY", "VALUE");
+
+//Get a Value:
+cfg.Get("Key");
+
+//Get a Value with Default Value, if Key Not Exist:
+cfg.Get("KEY", "DefaultValue");
+
+//Delete a Key from your Config File:
+cfg.Delete("KEY");
+			</pre>
+		</div>
+		<hr/>
+		<div class='text'>
+		Any questions? <a target='_blank' href='http://ramajd.github.io'>contact me</a>
+		</div>
+		<a href="https://github.com/ramajd/SimpleConfigEditor"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+	</body>
+</html>
